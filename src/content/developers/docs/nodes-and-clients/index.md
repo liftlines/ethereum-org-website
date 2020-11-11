@@ -20,6 +20,10 @@ You can see a real-time view of the Ethereum network by looking at this [map of 
 
 Many [implementations of Ethereum clients](/developers/docs/nodes-and-clients/#clients) exist in a variety of languages. What these client implementations have in common is they all follow a formal specification. This specification dictates how the Ethereum network and blockchain functions.
 
+![Eth1x client](https://storage.googleapis.com/ethereum-hackmd/upload_1b9f852c420c76274b0a899d4e7f39fb.png)
+
+Simplified diagram of what Ethereum client features. 
+
 ## Node types {#node-types}
 
 If you want to run your own node, you should understand that there are different types of node that consume data differently. In fact, clients can run 3 different types of node - light, full and archive. There are also options of different sync strategies which enables faster synchronization time. Synchronization refers to how quickly it can get the most up-to-date information on Ethereum's state.
