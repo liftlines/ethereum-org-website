@@ -45,7 +45,7 @@ If you want to [run your own node](/developers/docs/nodes-and-clients/run-a-node
 - Stores everything kept in the full node and builds an archive of historical states. Needed if you want to query something like an account balance at block #4,000,000.
 - These data represent units of terabytes which makes archive nodes less attractive for average users but can be handy for services like block explorers, wallet vendors, and chain analytics.
 
-Syncing clients in any mode other than archive will result in pruned blockchain data. This means, there is no archive of all historical state but the full node is able to build them on demand.
+Syncing clients in any mode other than archive will result in pruned blockchain data. This means, there is no archive of all historical states but the full node is able to build them on demand.
 
 ## Why should I run an Ethereum node? {#why-should-i-run-an-ethereum-node}
 
@@ -105,7 +105,7 @@ On the other hand, if you run a client, you can share it with your friends who m
 
 The Ethereum community maintains multiple open-source clients, developed by different teams using different programming languages. This makes the network stronger and more diverse. The ideal goal is to achieve diversity without any client dominating to reduce any single points of failure.
 
-This table summarises the different clients. All of them are actively worked on and pass [client tests](https://github.com/ethereum/tests).
+This table summarizes the different clients. All of them are actively worked on and pass [client tests](https://github.com/ethereum/tests).
 
 | Client                                                       | Language | Operating systems     | Networks                                   | Sync strategies         | State pruning   |
 | ------------------------------------------------------------ | -------- | --------------------- | ------------------------------------------ | ----------------------- | --------------- |
@@ -113,7 +113,6 @@ This table summarises the different clients. All of them are actively worked on 
 | [OpenEthereum](https://github.com/openethereum/openethereum) | Rust     | Linux, Windows, macOS | Mainnet, Kovan, Ropsten, and more          | Warp, Full              | Archive, Pruned |
 | [Nethermind](http://nethermind.io/)                          | C#, .NET | Linux, Windows, macOS | Mainnet, Görli, Ropsten, Rinkeby, and more | Fast, Full              | Archive, Pruned |
 | [Besu](https://pegasys.tech/solutions/hyperledger-besu/)     | Java     | Linux, Windows, macOS | Mainnet, Rinkeby, Ropsten, and Görli       | Fast, Full              | Archive, Pruned |
-| [Trinity](https://trinity.ethereum.org/)                     | Python   | Linux, macOS          | Mainnet, Görli, Ropsten, and more          | Full, Beam, Fast/Header | Archive         |
 | [Erigon](https://github.com/ledgerwatch/erigon)              | Go / Multi | Linux, Windows, macOS | Mainnet, Görli, Rinkeby, Ropsten           | Full                  | Archive, Pruned |
 
 
@@ -143,7 +142,7 @@ Nethermind is an Ethereum implementation created with the C# .NET tech stack, ru
 
 - an optimized virtual machine
 - state access
-- networking and rich features like Prometheus/Graphana dashboards, seq enterprise logging support, JSON RPC tracing, and analytics plugins.
+- networking and rich features like Prometheus/Grafana dashboards, seq enterprise logging support, JSON RPC tracing, and analytics plugins.
 
 Nethermind also has [detailed documentation](https://docs.nethermind.io), strong dev support, an online community and 24/7 support available for premium users.
 
@@ -151,7 +150,7 @@ Nethermind also has [detailed documentation](https://docs.nethermind.io), strong
 
 Hyperledger Besu is an enterprise-grade Ethereum client for public and permissioned networks. It runs all of the Ethereum mainnet features, from tracing to GraphQL, has extensive monitoring and is supported by ConsenSys, both in open community channels and through commercial SLAs for enterprises. It is written in Java and is Apache 2.0 licensed.
 
-#### Erigon (#erigon)
+#### Erigon {#erigon}
 
 Erigon is a completely re-architected implementation of Ethereum, currently written in Go but with implementations in other languages planned. Erigon's goal is to provide a faster, more modular, and more optimized implementation of Ethereum. It can perform a full archive node sync using less than 2TB of disk space, in under 3 days.
 
@@ -170,9 +169,13 @@ You define the type of sync when you get set up, like so:
 
 `geth --syncmode "light"`
 
-**Setting up header sync in Trinity**
+For further details check the tutorial on [running Geth light node](/developers/tutorials/run-light-node-geth/). 
 
-`trinity --sync-from-checkpoint eth://block/byhash/0xa65877df954e1ff2012473efee8287252eee956c0d395a5791f1103a950a1e21?score=15,835,269,727,022,672,760,774`
+**Setting up full sync with archive in [Besu](https://besu.hyperledger.org/)**
+
+`besu --sync-mode=FULL`
+
+Like any other configuration, it can be defined with the startup flag or in the config file. Another example is [Nethermind](https://docs.nethermind.io/nethermind/) which prompts you to choose config during first initialization and creates config.
 
 ## Hardware {#hardware}
 
@@ -183,6 +186,7 @@ An easy way to run your own node is using 'plug and play' boxes like [DAppNode](
 ### Requirements {#requirements}
 
 Before installing any client, please ensure your computer has enough resources to run it. Minimum and recommended requirements can be found below, however the key part is the disk space. Syncing the Ethereum blockchain is very input/output intensive. It is best to have a solid-state drive (SSD). To run an Ethereum client on HDD, you will need at least 8GB of RAM to use as a cache.
+This table summarises the different clients. All of them are actively worked on and pass [client tests](https://github.com/ethereum/tests).
 
 #### Minimum requirements {#recommended-specifications}
 
